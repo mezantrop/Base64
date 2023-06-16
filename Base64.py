@@ -1,5 +1,5 @@
 """
-A very simple Base64 encoder/decoder for learning purposes
+A very simple Base64 encoder/decoder in Python for learning purposes
 """
 
 """
@@ -43,7 +43,7 @@ class Base64:
             # Output octets
             ot0 = chr(st0 << 2 | st1 >> 4)
             ot1 = chr((st1 & 0xF) << 4 | st2 >> 2) if st2 else ''
-            ot2 = chr((st2 & 0x3) << 6 | st3 & 0x3F) if st3 else ''
+            ot2 = chr((st2 & 0x3) << 6 | (st3 & 0x3F)) if st3 else ''
 
             dec += ot0 + ot1 + ot2
 
